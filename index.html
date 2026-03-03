@@ -9,23 +9,39 @@
   <meta name="apple-mobile-web-app-title" content="Raft Locations">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <script>
-    setTimeout(function() {
-      window.location.href = "https://airtable.com/appYbyo8PmvyF6SI6/shrq5k9JNcZfA9x8E/tblv27be71RDwqjBm";
-    }, 1500);
-  </script>
-
   <style>
     body {
       display:flex;
+      flex-direction:column;
       justify-content:center;
       align-items:center;
       height:100vh;
       font-family:-apple-system;
+      text-align:center;
+    }
+    button {
+      padding:15px 25px;
+      font-size:18px;
+      margin-top:20px;
     }
   </style>
 </head>
 <body>
-  <h2>Loading Raft Locations…</h2>
+  <h2>Raft Locations</h2>
+  <p>Add this to your Home Screen for quick access.</p>
+  <p>Tap Share → Add to Home Screen</p>
+
+  <button onclick="goToAirtable()">Open Now</button>
+
+  <script>
+    function goToAirtable() {
+      window.location.href = "https://airtable.com/appYbyo8PmvyF6SI6/shrq5k9JNcZfA9x8E/tblv27be71RDwqjBm";
+    }
+
+    // If launched from Home Screen, auto-redirect
+    if (window.navigator.standalone) {
+      window.location.href = "https://airtable.com/appYbyo8PmvyF6SI6/shrq5k9JNcZfA9x8E/tblv27be71RDwqjBm";
+    }
+  </script>
 </body>
 </html>
